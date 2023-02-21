@@ -1,5 +1,5 @@
-import moment from "moment";
-import Currency from "react-currency-formatter";
+import moment from 'moment';
+import Currency from 'react-currency-formatter';
 
 function Order({ id, amount, amountShipping, items, timestamp, images }) {
   return (
@@ -7,14 +7,21 @@ function Order({ id, amount, amountShipping, items, timestamp, images }) {
       <div className="flex items-center space-x-10 p-5 bg-gray-100 text-sm text-gray-600">
         <div>
           <p className="text-xs font-bold">ORDER PLACED</p>
-          <p>{moment.unix(timestamp).format("DD MMM YYYY")}</p>
+          <p>{moment.unix(timestamp).format('DD MMM YYYY')}</p>
         </div>
 
         <div>
           <p className="text-xs font-bold">TOTAL</p>
           <p>
-            <Currency quantity={amount} currency="GBP" /> - Next Day Delivery{" "}
-            <Currency quantity={amountShipping} currency="GBP" />
+            <Currency
+              quantity={amount}
+              currency="GBP"
+            />{' '}
+            - Next Day Delivery{' '}
+            <Currency
+              quantity={amountShipping}
+              currency="GBP"
+            />
           </p>
         </div>
 
@@ -29,8 +36,13 @@ function Order({ id, amount, amountShipping, items, timestamp, images }) {
 
       <div className="p-5 sm:p-10">
         <div className="flex space-x-6 overflow-x-auto">
-          {images.map((image) => (
-            <img src={image} alt="" className="h-20 object-contain sm:h-32" />
+          {images.map((image, i) => (
+            <img
+              src={image}
+              key={i}
+              alt=""
+              className="h-20 object-contain sm:h-32"
+            />
           ))}
         </div>
       </div>
