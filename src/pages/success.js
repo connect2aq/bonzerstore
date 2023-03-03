@@ -17,15 +17,14 @@ function Success() {
             </h1>
           </div>
           <p>
-            Thank you for shopping with us. We will send a confirmation once
-            your item has shipped, if you would like to check the status of your
-            order(s) please press the link below.
+            Thank you for shopping with us. Please note this is just an dummy
+            order and it will not be shipped.
           </p>
           <button
-            onClick={() => router.push('/orders')}
+            onClick={() => router.push('/')}
             className="button mt-8"
           >
-            Go to my orders
+            Back to home
           </button>
         </div>
       </main>

@@ -96,6 +96,9 @@ function Checkout() {
               >
                 {!session ? 'Sign In to Checkout' : 'Proceed to Checkout'}
               </button>
+              <h2 className="bg-gray-100 text-sm">
+                Use Card number <b>4242 4242 4242 4242</b> for testing purpose
+              </h2>
             </>
           )}
         </div>
