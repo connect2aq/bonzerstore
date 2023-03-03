@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import { selectItems } from '../slices/basketSlice';
 import { useRouter } from 'next/router';
 import { signIn, signOut, useSession } from 'next-auth/client';
+import TopBar from './TopBar';
 
 function Header() {
   const items = useSelector(selectItems);
@@ -16,6 +17,7 @@ function Header() {
 
   return (
     <header className="sticky top-0 z-50">
+      <TopBar></TopBar>
       <div className="flex items-center bg-amazon_blue p-1 flex-grow py-2">
         <div className="mt-2 flex items-center flex-grow sm:flex-grow-0">
           <Image
