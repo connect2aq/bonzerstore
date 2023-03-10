@@ -1,8 +1,8 @@
-import Head from "next/head";
-import Header from "../components/Header";
-import Banner from "../components/Banner";
-import ProductFeed from "../components/ProductFeed";
-import { getSession, useSession } from "next-auth/client";
+import Head from 'next/head';
+import Header from '../components/Header';
+import Banner from '../components/Banner';
+import ProductFeed from '../components/ProductFeed';
+import { getSession, useSession } from 'next-auth/client';
 
 export default function Home({ products }) {
   const [session, loading] = useSession();
@@ -10,7 +10,7 @@ export default function Home({ products }) {
   return (
     <div className="bg-gray-100">
       <Head>
-        <title>Amazon 2.0</title>
+        <title>Bonzer Store</title>
       </Head>
 
       <Header />
@@ -26,7 +26,7 @@ export default function Home({ products }) {
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
-  const products = await fetch("https://fakestoreapi.com/products").then(
+  const products = await fetch('https://fakestoreapi.com/products').then(
     (res) => res.json()
   );
 
